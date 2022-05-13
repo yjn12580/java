@@ -5,11 +5,11 @@ public class zifu
 		String a = "15";
 		int b=Integer.parseInt (a);//Intteger.parseInt:包装类
 		double b1=Double.parseDouble (a);//Double.parseDouble:包装类
-		System.out.println(b);
-		System.out.println(b1);
+		System.out.println(b);//15
+		System.out.println(b1);//15.0
 		String c= b+"";
 		String d = b1+"";
-		System.out.println(c);
-		System.out.println(d);
+		System.out.println(c);//"15"
+		System.out.println(d);//"15.0"
 	}
 }
