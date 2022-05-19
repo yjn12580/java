@@ -1,0 +1,26 @@
+
+import java.util.Scanner;
+public class zifu{
+	public static void main (String[] args){
+		Scanner myScanner = new Scanner (System.in);
+		int plice =60;
+		int months = myScanner.nextInt();
+		int age = myScanner.nextInt();
+		if(months>=4&&months<=10)
+		{
+			if(age>=18&&age<=60){
+				System.out.println(plice);
+			}else if(age<18) {
+				System.out.println(plice/2);
+			}else if (age>60){
+				System.out.println(plice/3);
+			}
+		}else{
+			if(age>=18&&age<=60){
+			System.out.println("票价=30");
+		    }else{
+		    System.out.println("票价=20");
+		    }
+		}
+	} 
+}
