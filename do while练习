@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class swtich{
+    public static void main(String []args) {
+	Scanner my = new Scanner(System.in);
+	do{
+		System.out.println("还钱吗？1/2");
+		int a=my.nextInt();
+		if(a!=1){
+			System.out.println("找打");
+			System.out.println("找打");
+			System.out.println("找打");
+			System.out.println("找打");
+			System.out.println("找打");
+		}
+		if(a==1){
+			System.out.println("放过你");
+			break;
+		}
+	}while(2>1);
+}
+}
