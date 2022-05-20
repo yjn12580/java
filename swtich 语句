@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class swtich{
+	public static void main (String [] args){
+		Scanner my = new Scanner(System.in);
+		char a = my.next().charAt(0);
+	 	switch (a)
+	 	{
+	 		case 'a':
+	 			System.out.println("A");
+	 			break;
+	 		case 'b':
+	 		System.out.println("B");
+	 			break;
+	 		default :
+	 		System.out.println("找不到");
+	 		break;
+	 	} 
+	}
+}
