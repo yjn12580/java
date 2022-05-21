@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class swtich{
+    public static void main(String []args) {
+    	int sum = 0;
+    	while(true)
+    	{
+    	int a = (int)(Math.random()*100);//随机生成大于0小于1的double数
+    	sum++;
+    	if(a==97)
+    	{
+    		System.out.println(a);
+    		System.out.print(sum);
+    		break;
+    	}
+
+        }
+    }
+}
