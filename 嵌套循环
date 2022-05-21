@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class swtich{
+    public static void main(String []args) {
+	Scanner my = new Scanner(System.in);
+	int zong =0;
+     for(int a=1;a<=3;a++)
+     {
+     	int ping = 0;
+     	for(int b =1;b<=5;b++)
+     	{
+     		int stu = my.nextInt();
+     		ping +=stu;
+     	}
+     	System.out.println("平均分=" +(double)ping/5);
+     	zong +=ping/5;
+     }
+
+		System.out.println("zong平均分=" +(double)zong/3);
+}
+}
