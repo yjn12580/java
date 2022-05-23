@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class swtich{
+    public static void main(String []args) {
+    double a =1;
+    double  sum=0;
+    for(a=1;a<100;a+=2)
+    {
+    	sum+=(1/a);
+     }
+      for(a=2;a<=100;a+=2)
+    {
+    	sum-=(1/a);
+     }
+     System.out.println(sum);
+    }
+}
