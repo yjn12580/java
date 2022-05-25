@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class swtich{
+    public static void main(String []args) {
+    	Scanner myScanner=new Scanner(System.in);
+    	int arr[]={1,2,3,4};
+    	do
+    	{
+    		if(arr.length==1)
+    		{
+    			System.out.println("不能再删了");
+    			break;
+    		}
+    		int[] arr2=new int [arr.length-1];
+    		for(int i=0;i<arr2.length;i++)
+    		{
+    			arr2[i]=arr[i];
+    		}
+    		arr=arr2;
+    		System.out.println("是否继续缩减 y/n");
+    		char key = myScanner.next().charAt(0);
+    		if(key=='n')
+    		{
+    			break;
+    		}
+    	}while(true);
+    	for(int count=0;count<arr.length;count++)
+    	{
+    		System.out.print(arr[count]+" ");
+    	}
+	} 
+}
