@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class swtich{
+	//1.创建一个新数组arr2，大小为arr.length;
+	//2.比较q和arr[i]；
+	//3.如果q<arr[i]，记住是第几个；
+	//4.拷贝arr数据到arr2，并插入q
+	//5.arr=arr2；
+	//循环1-5，直到不想输入新数字；
+	//打印新数组
+    public static void main(String []args) {
+    	Scanner scanner = new Scanner(System.in);
+    	int[] arr={10 ,12,45,90};
+    	do
+    {
+    	int count=0;
+    	int arr2[]=new int[arr.length+1];
+    	int q =scanner.nextInt();
+    	for(int i=0;i<arr.length;i++)
+    	{
+    		if(arr[i]>q)
+    		{
+    			break;
+    		}
+    		count++;
+    	}
+    	for(int i=0, j=0;i<arr2.length;i++)
+    	{
+    		if(i==count)
+    		{
+    			arr2[i]=q;
+    		}
+    		else
+    		{
+    			arr2[i]=arr[j];
+    			j++;
+    		}
+    	}
+    	arr=arr2;
+    	System.out.println("是否在输入一个数   y/n");
+    	char key=scanner.next().charAt(0);
+    	if(key=='n')
+    	{
+    		break;
+    	}
+    }while(true);
+    	for(int i=0;i<arr.length;i++)
+    	{
+    		System.out.print(arr[i] +" ");
+    	}
+	} 
+}
