@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class recursion{//斐波那契数列
+    public static void main(String []args) {
+    Scanner scanner =new Scanner(System.in );
+    int a=scanner.nextInt();
+    Digui dg = new Digui();
+    int b=dg.Fibonacci(a);
+    System.out.println(b);
+    	}
+}
+class Digui
+{
+	public int Fibonacci (int a )
+	{
+		if(a<=2)
+		{
+			return 1;
+		}		
+		else
+		{
+			return Fibonacci(a-1)+Fibonacci (a-2);
+		}
+	}
+}
