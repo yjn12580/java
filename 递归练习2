@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class swtich{
+    public static void main(String []args) {
+    int a=1;
+    int i=10;
+    Digui dg = new Digui();
+    int b=dg.eat(a,i);
+    System.out.println(b);
+    	}
+}
+class Digui
+{
+	public int eat (int a,int i )
+	{
+		if(i==1)
+		{
+			return a;
+		}
+		i--;
+		a=(a+1)*2;
+		return eat(a,i);
+	}
+}
