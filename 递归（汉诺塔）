@@ -1,0 +1,24 @@
+public class hannoi
+{
+	public static void main (String[]args)
+	{
+		Hnt a =new Hnt();
+	a.H(4,'A','B','C');
+	}
+}
+class Hnt
+{
+	public void H(int h,char a,char b,char c)
+	{
+		if(h==1)
+		{
+			System.out.println(a+"-->"+c);
+		}
+		else
+		{
+			H(h-1,a,c,b);
+			System.out.println(a+"-->"+c);
+			H(h-1,b,a,c);
+		}
+	}
+}
