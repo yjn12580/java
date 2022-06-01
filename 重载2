@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class overload 
+{
+    public static void main(String []args) 
+   {
+   	Methods a =new Methods();
+ 	a.m(3,5);
+ 	a.m(3.1,5.2);
+ 	a.m(3.2,3.3,5.2); 
+   }
+}
+class Methods{
+	public void m (int i,int j)
+	{
+
+		System.out.println(i>j?i:j);
+	}
+	public void m(double i,double j){
+		System.out.println(i>j?i:j);
+	}
+	public void m(double i,double j,double a)
+	{
+		if(i<j)
+		{
+			i=j;
+		}
+		if(i<a)
+		{
+			i=a;
+		}
+		System.out.println(i);
+	}
+}
