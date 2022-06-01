@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class kebiancs 
+{
+    public static void main(String []args) 
+   {
+   	HspMethods a =new HspMethods();
+ 	String name1 ="nihao";
+ 	double score1=10.5;
+ 	double score2=15.5;
+ 	double score3=45.5;
+ 	double score4=55.5;
+ 	double score5=85.2; 
+ 	a.showScore(name1,score1,score2,score3);
+   }
+}
+class HspMethods{
+	public int showScore (String a,double...score)
+	{
+		double sum =0;
+		for(int j=0;j<score.length;j++)
+		{
+			sum +=score[j];
+		}
+		System.out.println("姓名="+a+"成绩="+sum);
+		return 0;
+	}
+	
+}
