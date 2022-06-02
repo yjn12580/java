@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class overload 
+{
+    public static void main(String []args) 
+   {
+   	HspMethods a =new HspMethods("momo",15.5);
+   	System.out.println(a.score1);
+ 	
+   }
+}
+class HspMethods{
+	String name;
+	double score1;
+	public  HspMethods (String a,double score)
+	{
+		 score1 =score ;
+		 name = a;
+	}
+	
+}
