@@ -1,0 +1,41 @@
+public class A01{
+	public static void main (String[]args){
+		String []arr1={"q","w","e","r","d","f"};
+		A02 b=new A02();
+		System.out.println(b.fine("e",arr1));
+		Book book1=new Book();
+		book1.price=155;
+		book1.updataPrice(book1.price);
+		System.out.println(book1.price);
+
+	}
+}
+
+class A02{
+	public int fine (String a,String []arr){
+	int i=-1;
+	for(int j=0;j<arr.length;j++){
+		if(a==arr[j]){
+			i=j;
+			break;
+		}
+	}
+		return i;
+	}
+}
+class Book{
+	int price;
+	public void updataPrice(int price){
+		if(price>150)
+		{
+			this.price=150;
+		}
+		else if(price>100)
+		{
+			this.price=100;
+		}
+		else{
+			 this.price=price;
+		}
+	}
+}
