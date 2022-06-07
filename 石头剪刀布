@@ -1,0 +1,59 @@
+import java.util.Scanner;
+public class game1{
+//随机生成0-2，代表电脑
+//0.石头 1.剪刀 2.布
+//我出0.石头 1.剪刀 2.布
+//比较输赢
+//赢了count++，表示我赢了几次
+//是否继续
+	public static void main (String[]args){
+		Scanner scanner=new Scanner(System.in);
+		int a=0;
+		int count=0;
+		T t1=new T();
+		do{
+			a=(int)(Math.random()*100)%3;//随机生成0-2
+			t1.play1(a);
+			System.out.println("请输入0-2(0.石头 1.剪刀 2.布)");
+			a=scanner.nextInt();//输入0-2
+			if(t1.play2(a)==3){
+				count++;
+				System.out.println("我已经赢了"+count+"次了");
+			}
+				System.out.println("是否继续 1.继续 ===2.退出");
+				if(scanner.nextInt()!=1){
+					break;
+				}
+		}while(true);
+	}
+}
+class T{
+	int a;
+	String name;
+	public void play1(int a){
+		this.a=a;
+		if(a==0){
+			this.name="石头";
+		}
+		else if(a==1){
+			this.name="剪刀";
+		}
+		else{
+			this.name="布";
+		}
+	}
+	public int play2(int a){
+			if((a-this.a)==1||(a-this.a)==-2){
+				System.out.println("电脑赢了 电脑"+this.name);
+				return 2;
+			}
+			else if((a-this.a)==2||(a-this.a)==-1){
+				System.out.println("我赢了 电脑"+this.name);
+				return 3;
+			}
+			else {
+			System.out.println("平局 电脑"+this.name);
+			return 1;
+			}
+	}
+}
