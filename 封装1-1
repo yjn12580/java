@@ -3,7 +3,7 @@ package com.rumen;
 public class AccountTestr {
     public static void main(String[] args) {
       Account a  =new Account("YJjlkllN",10,"123");
-        System.out.println("名字"+a.getName()+" 余额 "+a.getSalary()+" 密码 "+a.getPassword());
+       a.show();
     }
 
 }
