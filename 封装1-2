@@ -51,7 +51,7 @@ package com.rumen;
          }
      }
      public void show(){
-       System.out.println("名字"+a.getName()+" 余额 "+a.getSalary()+" 密码 "+a.getPassword());
+       System.out.println("名字"+getName()+" 余额 "+getSalary()+" 密码 "+getPassword());
   }
  }
 
