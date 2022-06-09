@@ -1,0 +1,54 @@
+package com.rumen;
+
+ class Account  {
+  private String name;
+  private double salary;
+  private String password;
+  public Account(){
+  }
+     public Account(String name, double salary, String password) {
+       setName(name);
+       setSalary(salary);
+       setPassword(password);
+     }
+     public String getName() {
+         return name;
+     }
+
+     public void setName(String name) {
+         if (name.length() <= 4 && name.length() >= 2) {
+             this.name = name;
+         }
+         else {
+             System.out.println("id输入错误,默认为zhu");
+             this.name=null;
+         }
+     }
+     public double getSalary() {
+         return salary;
+     }
+
+     public void setSalary(double salary) {
+         if (salary > 20) {
+             this.salary = salary;
+         }
+         else {
+             System.out.println("钱太少了，算你21吧");
+             this.salary=21;
+         }
+     }
+     public String getPassword() {
+         return password;
+     }
+
+     public void setPassword(String passkey) {
+         if(passkey.length()==6) {
+             this.password = passkey;
+         }
+         else {
+             System.out.println("密码错误，默认123456");
+             this.password="123456";
+         }
+     }
+ }
+
