@@ -50,5 +50,8 @@ package com.rumen;
              this.password="123456";
          }
      }
+     public void show(){
+       System.out.println("名字"+a.getName()+" 余额 "+a.getSalary()+" 密码 "+a.getPassword());
+  }
  }
 
