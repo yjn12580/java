@@ -1,0 +1,27 @@
+package poly;
+public class showEmpolyees {
+    public static void main(String[] args) {
+        Odinary per1 = new Odinary("jack", 12035);
+        Manager per2 = new Manager("bob", 6250, 12000);
+        Test a = new Test();
+        a.show(per1);
+        a.show(per2);
+        a.inst(per1);
+        a.inst(per2);
+       
+    }
+}
+class Test{
+    public void show (Empolyee a){//添加一个方法，可以获取员工的年薪
+        System.out.println(a.GetAnnual());
+    }
+    public void inst(Empolyee a){//添加一个方法，如果是员工，调用work，是经理就调用manage；
+
+        if(a instanceof Odinary) {
+            System.out.println(((Odinary)a).Work());
+        }
+        else if(a instanceof Manager) {
+            ((Manager)a).manage();
+        }
+    }
+}
