@@ -1,0 +1,22 @@
+package poly;
+//继承Empolyee，添加特有属性 bonus，特有方法 manage，重写GetAnnual;
+public class Manager extends Empolyee {
+    private double  bonus;
+    public Manager(String name, double msalray, double bonus) {
+        super(name, msalray);
+        this.bonus = bonus;
+    }
+    public double getBonus() {
+        return bonus;
+    }
+    public void setBonus(double bonus) {
+        this.bonus = bonus;
+    }
+    public void manage(){
+        System.out.println("管理工作");
+    }
+
+    public double GetAnnual() {
+        return super.GetAnnual()+bonus*12;
+    }
+}
