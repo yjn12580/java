@@ -1,0 +1,25 @@
+package poly;
+//添加属性 姓名、月薪、计算年薪的方法
+public class Empolyee {
+     private String name;
+     private double msalray;
+    public Empolyee(String name, double msalray) {
+        this.name = name;
+        this.msalray = msalray;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public double getMsalray() {
+        return msalray;
+    }
+    public void setMsalray(double msalray) {
+        this.msalray = msalray;
+    }
+    public  double GetAnnual(){
+        return msalray*12;
+    }
+}
