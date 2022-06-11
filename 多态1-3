@@ -1,0 +1,13 @@
+package poly;
+//继承Empolyee,添加特有方法work，重写GetAnnual;
+public class Odinary extends Empolyee{
+    public Odinary(String name, double msalray) {
+        super(name, msalray);
+    }
+    public String Work(){
+        return "996";
+    }
+    public double GetAnnual() {
+        return super.GetAnnual();
+    }
+}
