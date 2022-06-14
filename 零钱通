@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+public class hi {
+    public static void main(String[] args) {
+        menu m=new menu();
+        boolean tf=true;
+        do{
+            m.menus();
+            Scanner scanner =new Scanner(System.in);
+            System.out.println("请输入1-4");
+            int key=scanner.nextInt();
+            switch (key) {
+                case 1:
+                    m.print1();
+                    break;
+                case 2:
+                    m.print2();
+                    break;
+                case 3:
+                    m.print3();
+                    break;
+                case 4:
+                    tf=false;
+                    break;
+                default:
+                    System.out.println("输入有误");
+                    break;
+            }
+        }while(tf);
+    }
+}
+class menu{
+    Scanner scanner =new Scanner(System.in);
+    double money=0;
+     double yue=0;
+     String []arr=new String [3];
+     int a=-1;
+    public void menus(){
+        System.out.println("============零钱通===========");
+        System.out.println("\t\t\t1.零钱通明细");
+        System.out.println("\t\t\t2.收益明细");
+        System.out.println("\t\t\t3.花费明细");
+        System.out.println("\t\t\t4.退   出");
+    }
+    public void print1() {
+        System.out.println("-----------零钱通明细-----------");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+    public void print2(){
+        System.out.print("收入: ");
+        money=scanner.nextInt();
+        yue+=money;
+        a++;
+        if(a>2){
+            a();
+            a=2;
+        }
+        arr[a]="收入\t"+money+"余额"+yue;
+    }
+    public void print3() {
+        System.out.print("支出: ");
+        money = scanner.nextInt();
+        if (yue - money < 0) {
+            System.out.println("钱不够了，少花点吧");
+        } else {
+            yue -= money;
+            a++;
+            if (a > 2) {
+                a();
+                a = 2;
+            }
+            arr[a] = "支出\t" + money + "余额" + yue;
+        }
+    }
+    public void a(){
+        arr[0]=arr[1];
+        arr[1]=arr[2];
+        arr[2]=null;
+    }
+}
