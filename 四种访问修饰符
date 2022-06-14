@@ -1,0 +1,4 @@
+public      公开          所有人都能用
+protected   受保护        同包、同类、父子类
+            默认          同包、同类
+private     私有          同类
