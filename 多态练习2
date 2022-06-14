@@ -1,0 +1,69 @@
+package homework3;
+//父类；员工 子类；部门经理、普通员工
+//部门经理工资=1000+日薪*工作天数*1.2
+//普通员工工资=日薪*工作天数*1.0
+//员工属性；名字、日薪、工作天数   方法；打印工资
+//子类重写打印工资方法
+//分别创建员工、经理对象，并调用打印工资方法
+public class perdiem{
+    public static void main(String[] args) {
+        Staff p1=new Ordinary("jack",100,25);
+        Staff p2=new Manager("bob",110,27);
+        p1.salary();
+        p2.salary();
+    }
+}
+ class Staff {
+    private String name;
+    private double perdiem;
+    private int days;
+
+    public Staff(String name, double perdiem, int days) {
+        this.name = name;
+        this.perdiem = perdiem;
+        this.days = days;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPerdiem() {
+        return perdiem;
+    }
+
+    public void setPerdiem(double perdiem) {
+        this.perdiem = perdiem;
+    }
+
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
+    }
+    public void salary(){
+
+    }
+}
+class Ordinary extends Staff{
+    public Ordinary(String name, double perdiem, int days) {
+        super(name, perdiem, days);
+    }
+    public void salary(){
+        System.out.println("工资="+getPerdiem()*getDays()*1.0);
+    }
+}
+class Manager extends Staff{
+    public Manager(String name, double perdiem, int days) {
+        super(name, perdiem, days);
+    }
+    public void salary(){
+        System.out.println("工资="+(getPerdiem()*getDays()*1.2+1000));
+    }
+}
