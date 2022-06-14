@@ -1,0 +1,68 @@
+public class homework1 {
+//定义一个person类，初始化person对象数组，创建三个person对象，用冒泡排序按年龄大小排序
+    public static void main(String[] args) {
+        Person[] arr=new Person[3] ;
+        arr[0] = new Person("jack", "学生", 12);
+        arr[1] = new Person ("bob","学生",13);
+        arr[2] = new Person("smith","teacher",33);
+        new Compare().bubble(arr);
+    }
+}
+class Compare{
+    public void bubble(Person ... nums){
+        for (int i = 0; i <nums.length-1 ; i++) {
+            for (int j = 0; j < nums.length-i-1 ; j++) {
+                    Person temp;
+                if(nums[j].getAge()<nums[j+1].getAge()){
+                    temp=nums [j];
+                    nums[j]=nums[j+1];
+                    nums[j+1]=temp;
+                }
+            }
+        }
+        for (int i = 0; i < nums.length ; i++) {
+            System.out.println(nums[i].toString());
+        }
+    }
+}
+class Person {
+   private  String name;
+    private String job;
+    private int age;
+
+    public Person(String name, String job, int age) {
+        this.name = name;
+        this.job = job;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
+}
+
