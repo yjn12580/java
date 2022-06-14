@@ -1,23 +1,36 @@
 import java.util.Scanner;
-
 public class hi {
     public static void main(String[] args) {
-        menu m=new menu();
-        boolean tf=true;
+        new menu().menus();
+    }
+}
+class menu{
+    boolean tf=true;
+    Scanner scanner =new Scanner(System.in);
+    double money=0;
+     double yue=0;
+     String []arr=new String [3];
+     int a=-1;
+    public void menus(){
         do{
-            m.menus();
+            ;
+            System.out.println("============零钱通===========");
+            System.out.println("\t\t\t1.零钱通明细");
+            System.out.println("\t\t\t2.收益明细");
+            System.out.println("\t\t\t3.花费明细");
+            System.out.println("\t\t\t4.退   出");
             Scanner scanner =new Scanner(System.in);
             System.out.println("请输入1-4");
             int key=scanner.nextInt();
             switch (key) {
                 case 1:
-                    m.print1();
+                    print1();
                     break;
                 case 2:
-                    m.print2();
+                    print2();
                     break;
                 case 3:
-                    m.print3();
+                    print3();
                     break;
                 case 4:
                     tf=false;
@@ -27,20 +40,6 @@ public class hi {
                     break;
             }
         }while(tf);
-    }
-}
-class menu{
-    Scanner scanner =new Scanner(System.in);
-    double money=0;
-     double yue=0;
-     String []arr=new String [3];
-     int a=-1;
-    public void menus(){
-        System.out.println("============零钱通===========");
-        System.out.println("\t\t\t1.零钱通明细");
-        System.out.println("\t\t\t2.收益明细");
-        System.out.println("\t\t\t3.花费明细");
-        System.out.println("\t\t\t4.退   出");
     }
     public void print1() {
         System.out.println("-----------零钱通明细-----------");
