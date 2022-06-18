@@ -1,0 +1,183 @@
+import java.util.Scanner;
+
+public class rental {
+    public static void main(String[] args) {
+        Informatian a=new Informatian();
+        a.play();
+    }
+}
+class Informatian{
+    String name ;
+    String  phone;
+    String address;
+    double mren;
+    String status;
+    Informatian[] nums=new Informatian[10];//存放已有元素
+    int id=0;
+    int count=0;//房屋总数，添加+1，删除-1
+    Scanner scanner =new Scanner(System.in);
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public double getMren() {
+        return mren;
+    }
+
+    public void setMren(double mren) {
+        this.mren = mren;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void play(){
+        boolean key=true;
+        do {
+            menus();
+            switch (scanner.nextInt()){
+                case 1:
+                    add();
+                    break;
+                case 2:
+                    query();
+                    break;
+                case 3:
+                    del();
+                    break;
+                case 4:
+                    modify();
+                    break;
+                case 5:
+                    all();
+                    break;
+                case 6:
+                    System.out.println("是否要退出 y/n");
+                    String  a=scanner.next();
+                    if(a.equals("y")){
+                        key=false;
+                    }
+                    break;
+                default:
+                    System.out.println("输入错误");
+                    break;
+            }
+        }while(key);
+    }
+    public void menus(){
+        System.out.println("----------房屋出租----------");
+        System.out.println("-------1.新 增 房 源--------");
+        System.out.println("-------2.查 找 房 源--------");
+        System.out.println("-------3.删 除 房 源--------");
+        System.out.println("-------4.修 改 房 屋 信 息---");
+        System.out.println("-------5.房 屋 列 表--------");
+        System.out.println("-------6.退 出-------------");
+    }
+    public void add(){
+        nums[id]=new Informatian();
+        System.out.println("请输入姓名");
+        nums[id].setName(scanner.next());
+        System.out.println("请输入联系方式");
+        nums[id].setPhone(scanner.next());
+        System.out.println("请输入地址");
+        nums[id].setAddress(scanner.next());
+        System.out.println("请输入月租");
+        nums[id].setMren(scanner.nextDouble());
+        System.out.println("当前状态（已出租/未出租）");
+        nums[id].setStatus(scanner.next());
+        System.out.println("----------------------");
+        id++;
+        count++;
+    }
+    public void query(){
+        System.out.println("请输入想查找的房屋编号");
+        int n=scanner.nextInt()-1;
+        if (n > count - 1) {
+            //查找的房子超出房屋总数，提示
+            System.out.println("没房子");
+        }else{
+        nums[n].print();
+        }
+    }
+    public void del(){
+        if(count==0){
+            //没有房子
+            System.out.println("没房子");
+        } else if (count==1) {
+            //只有一间房子
+            nums[0]=null;
+            count--;
+        } else {
+            System.out.println("请输入想要删除的房屋编号");
+            int n = scanner.nextInt() - 1;
+            if(n>count-1){//输入编号大于房屋总数，提示
+                System.out.println("没有这没多房子");
+            }else{
+                int i=0;
+                //删除第n间房，nums[n]后面的元素往前一格
+                //最后一个元素变为空，房屋数量减一
+            for ( i = n; i < count-1; i++) {
+                nums[i] = nums[i + 1];
+                nums[i].id -= 1;
+            }
+            nums[i]=null;
+            count--;
+            }
+        }
+    }
+    public void modify() {
+        System.out.println("请输入想要修改的房屋编号");
+        int n = scanner.nextInt() - 1;
+        if (n > count - 1) {//如果房子数量，提示
+            System.out.println("没房子");
+        } else {
+            System.out.println("姓名  修改前：" + nums[n].getName());
+            nums[n].setName(scanner.next());
+            System.out.println("电话  修改前：" + nums[n].getPhone());
+            nums[n].setPhone(scanner.next());
+            System.out.println("地址  修改前：" + nums[n].getAddress());
+            nums[n].setAddress(scanner.next());
+            System.out.println("月租  修改前：" + nums[n].getMren());
+            nums[n].setMren(scanner.nextDouble());
+            System.out.println("状态  修改前：" + nums[n].getStatus());
+            nums[n].setStatus(scanner.next());
+        }
+    }
+    public void all(){//打印所有房子的信息
+        for (int i = 0; i <nums.length ; i++) {
+            if(nums[i]==null){
+                break;
+            }
+            nums[i].print();
+        }
+    }
+    public void print(){
+        System.out.println((id+1)+"\t"+name+"\t"+phone+"\t"+address+"\t"+mren+
+                "\t"+status);
+    }
+}
